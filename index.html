@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Brow Session | Woods Brows</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f8f4ef;
+      color: #4A3F35;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+    p.subtext {
+      color: #8b776a;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    form {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #d2b8a3;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .calendly-section {
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Book Your Brow Session</h1>
+      <p class="subtext">Fill out your details & lock in your appointment time — effortlessly.</p>
+    </header>
+
+    <form id="leadForm">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <select name="service" required>
+        <option value="">Select a service</option>
+        <option value="Microblading">Microblading</option>
+        <option value="Brow Lamination">Brow Lamination</option>
+        <option value="Brow Tinting">Brow Tinting</option>
+      </select>
+      <textarea name="notes" placeholder="Additional details or preferences (optional)"></textarea>
+      <button type="submit">Submit & Continue to Scheduling</button>
+    </form>
+
+    <div class="calendly-section">
+      <!-- Calendly inline widget -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/broker-rodriguez/schedule" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('leadForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+
+      // Replace with your own webhook endpoint
+      const webhookURL = "https://your-notion-webhook-url.com/create-lead";
+
+      try {
+        await fetch(webhookURL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+        alert("Thanks! Your info was submitted. Now scroll down to book.");
+      } catch (error) {
+        console.error("Failed to submit:", error);
+        alert("Oops! Something went wrong. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
