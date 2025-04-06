@@ -30,11 +30,35 @@
       font-size: 1.2rem;
       color: #7a7a7a;
     }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-image: url('https://images.unsplash.com/photo-1616077167644-c8cbeec4c90c?auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      color: #fff;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      padding: 2rem;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
       padding: 5vw;
+      background: #fdf9f4;
     }
     .service-card {
       background: #fff;
@@ -42,6 +66,7 @@
       border-radius: 16px;
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease-in-out;
+      text-align: center;
     }
     .service-card:hover {
       transform: scale(1.03);
@@ -79,8 +104,11 @@
     }
     .calendly-section {
       padding: 5vw;
-      background: #fdf9f4;
-      min-height: 800px;
+      background: #fffaf7;
+    }
+    .calendly-inline-widget {
+      min-width: 320px;
+      height: 700px;
     }
   </style>
 </head>
@@ -89,6 +117,11 @@
     <h1>Woods Brows</h1>
     <p>Luxury Brows, Naturally You — Book Your Self-Care Moment</p>
   </header>
+
+  <section class="hero">
+    <h2>Elevate Your Routine</h2>
+    <p>Effortless beauty, curated with intention. Your brows — perfected.</p>
+  </section>
 
   <section class="services">
     <div class="service-card">
@@ -123,8 +156,12 @@
   </section>
 
   <section class="calendly-section">
+    <h2 style="text-align:center; font-family:'Playfair Display', serif; margin-bottom: 2rem;">Schedule Your Appointment</h2>
+    <!-- Calendly inline widget begin -->
     <div class="calendly-inline-widget" data-url="https://calendly.com/broker-rodriguez/schedule" style="min-width:320px;height:700px;"></div>
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <!-- Calendly inline widget end -->
   </section>
+
 </body>
 </html>
