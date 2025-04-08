@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Woods Brows | Luxury Brow Services</title>
+  <title>Booking | Woods Brows</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -123,6 +123,19 @@
       min-width: 320px;
       height: 700px;
     }
+    .booking-section {
+      padding: 5vw;
+      background: rgba(255, 255, 255, 0.8);
+      max-width: 800px;
+      margin: auto;
+      border-radius: 16px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+    }
+    .booking-section h2 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 2rem;
+    }
   </style>
 </head>
 <body>
@@ -158,7 +171,8 @@
     </div>
   </section>
 
-  <section class="lead-form">
+  <section class="booking-section">
+    <h2>Schedule Your Appointment</h2>
     <form action="https://hook.us2.make.com/vg2hlmm9obj9ifo8orc6t1b7rjrdzote" method="POST">
       <input type="text" name="name" placeholder="Full Name" required>
       <input type="email" name="email" placeholder="Email Address" required>
@@ -173,14 +187,10 @@
       <input type="date" name="date_submitted" required>
       <button type="submit">Submit Details</button>
     </form>
-  </section>
 
-  <section class="calendly-section">
-    <h2 style="text-align:center; font-family:'Playfair Display', serif; margin-bottom: 2rem;">Schedule Your Appointment</h2>
-    <!-- Calendly inline widget begin -->
+    <h2 style="text-align:center; font-family:'Playfair Display', serif; margin-top: 2rem;">Calendly Booking</h2>
     <div class="calendly-inline-widget" data-url="https://calendly.com/broker-rodriguez/schedule" style="min-width:320px;height:700px;"></div>
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    <!-- Calendly inline widget end -->
   </section>
 
 </body>
